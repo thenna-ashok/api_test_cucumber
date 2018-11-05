@@ -9,6 +9,7 @@ repositories {
 // in this section declare the dependencies for your production and test code
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.13'
+    compile 'com.googlecode.json-simple:json-simple:1.1'
     testCompile 'junit:junit:4.12'
     testCompile 'info.cukes:cucumber-java:1.2.0'
     testCompile 'info.cukes:cucumber-junit:1.2.0'
@@ -30,9 +31,4 @@ task cucumber() {
             args = ['--plugin', 'pretty', '--glue', 'restassuredexample', 'src/test/resources']
         }
     }
-}
-
-test {
-    systemProperties = System.properties
-    testLogging.showStandardStreams = true
 }
